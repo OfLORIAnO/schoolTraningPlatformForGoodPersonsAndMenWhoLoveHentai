@@ -1,6 +1,7 @@
 @import '../../../include.module.scss';
 
 .start {
+    padding: 20px;
     height: 100%;
     &__body {
         font-size: 25px;
@@ -115,7 +116,7 @@
             color: #000;
             padding: 50px;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto 0 auto;
             width: 500px;
             border-radius: 20px;
             flex-grow: 0;
@@ -126,7 +127,6 @@
                 max-windth: 500px;
                 font-size: 30px;
                 padding: 30px;
-                margin-top: 20px;
             }
             &__none {
                 transition-duration: 0.2s;

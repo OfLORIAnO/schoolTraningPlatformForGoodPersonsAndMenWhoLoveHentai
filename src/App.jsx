@@ -11,14 +11,17 @@ import Homepage from './pages/Homepage/Homepage';
 import Train from './pages/Train/Train';
 import Start from './pages/Train/Start/Start';
 import Mechine from './pages/Train/Mechine/Mechine';
+import Error from './pages/Train/Error/Error';
 
 import { PrefixesPrePri } from './../data';
 
 function App() {
     const [allData, setAllData] = useState(PrefixesPrePri);
     const [selectedData, setSelectedData] = useState([]);
+    const [uncorrectAnswer, setUncorrectAnswer] = useState([]);
     useEffect(() => {
         setSelectedData([]);
+        setUncorrectAnswer([]);
     }, []);
     return (
         <Context.Provider
@@ -26,6 +29,8 @@ function App() {
                 allData,
                 selectedData,
                 setSelectedData,
+                uncorrectAnswer,
+                setUncorrectAnswer,
             }}
         >
             <div className={s.wrapper}>

@@ -10,8 +10,16 @@ import red from '/red.svg';
 import gal from '/gal.svg';
 
 export default function Start() {
-    const { allData, selectedData, setSelectedData } = useContext(Context);
-
+    const {
+        allData,
+        selectedData,
+        setSelectedData,
+        uncorrectAnswer,
+        setUncorrectAnswer,
+    } = useContext(Context);
+    useEffect(() => {
+        setUncorrectAnswer([]);
+    }, []);
     const [errorText, setErrorText] = useState(' ');
     const [amountInput, setAmountInput] = useState(0);
     const [amountOfWords, setAmountOfWords] = useState(
@@ -133,8 +141,8 @@ export default function Start() {
                             <input
                                 type='text'
                                 onChange={(e) => setAmountInput(e.target.value)}
-                            />
-                            /{amountOfWords}
+                            />{' '}
+                            / {amountOfWords}
                         </div>
                     </div>
                     {errorText ? (

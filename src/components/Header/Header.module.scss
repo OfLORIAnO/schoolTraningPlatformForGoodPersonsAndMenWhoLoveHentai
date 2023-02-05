@@ -19,6 +19,8 @@
     }
     ul {
         display: flex;
+        width: 100%;
+        justify-content: space-around;
         li {
             &:not(:last-child) {
                 margin: 0px 20px 0px 0px;
@@ -27,6 +29,9 @@
                 font-size: 35px;
                 color: #000;
                 font-weight: 700;
+                &:hover {
+                    text-decoration: underline;
+                }
                 @media (max-width: 600px) {
                     font-size: 25px;
                 }
