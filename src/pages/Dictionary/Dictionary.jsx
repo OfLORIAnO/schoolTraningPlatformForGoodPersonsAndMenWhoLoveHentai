@@ -12,6 +12,7 @@ export default function Dictionary() {
     return (
         <div className={s.container}>
             <div className={s.dictionary}>
+                <h1>Словарь</h1>
                 <div className={s.dictionary__item}>
                     <h1>Пре\При</h1>
                     {allData.prepri.map((item) => (
