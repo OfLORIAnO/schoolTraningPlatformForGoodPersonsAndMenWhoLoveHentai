@@ -29,6 +29,9 @@
         background: rgba($color: $secondary, $alpha: 0);
         cursor: pointer;
         transition-duration: 0.3s;
+        @media (max-width: 800px) {
+            animation: hovver 1 0.5s;
+        }
         img {
             margin-top: 10px;
             justify-self: flex-start;
@@ -41,6 +44,9 @@
         &:hover {
             transition-duration: 0.3s;
             background: $secondary;
+            @media (max-width: 800px) {
+                background: inherit;
+            }
         }
     }
     & > *:first-child {
@@ -160,5 +166,16 @@
             padding: 30px;
             margin-top: 20px;
         }
+    }
+}
+@keyframes hovver {
+    0% {
+        background-color: inherit;
+    }
+    50% {
+        background: $secondary;
+    }
+    100% {
+        background-color: inherit;
     }
 }

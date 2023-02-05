@@ -43,13 +43,19 @@
     &__body {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     h1 {
         font-size: 50px;
+        @media (max-width: 800px) {
+            font-size: 40px;
+        }
     }
     img {
         height: 50px;
         width: 50px;
-        margin-left: 5px;
-    }
+        margin-right: 10px;
+        @media (max-width: 800px) {
+            margin-left: 0px;
+        }}
 }
