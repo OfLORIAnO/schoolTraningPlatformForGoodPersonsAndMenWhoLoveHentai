@@ -1,4 +1,4 @@
 npm run dev from develope    
 stack:     
-  scss modules
+  scss modules    
   react-router-dom v6
