@@ -90,3 +90,6 @@ h6 {
     margin: auto;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}

@@ -16,10 +16,14 @@ import Dictionary from './pages/Dictionary/Dictionary';
 
 import { PrefixesPrePri } from './../data';
 
+import s2 from './pages/Train/Mechine/Mechine.module.scss';
+
 function App() {
     const [allData, setAllData] = useState(PrefixesPrePri);
     const [selectedData, setSelectedData] = useState([]);
     const [uncorrectAnswer, setUncorrectAnswer] = useState([]);
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [isUncorrect, setIsUncorrect] = useState(false);
     useEffect(() => {
         setSelectedData([]);
         setUncorrectAnswer([]);
@@ -32,9 +36,19 @@ function App() {
                 setSelectedData,
                 uncorrectAnswer,
                 setUncorrectAnswer,
+                isCorrect,
+                setIsCorrect,
+                isUncorrect,
+                setIsUncorrect,
             }}
         >
-            <div className={s.wrapper}>
+            <div
+                className={
+                    s.wrapper +
+                    ' ' +
+                    (isCorrect ? s2.isCorrect : isUncorrect ? s2.uncorrect : '')
+                }
+            >
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route index element={<Homepage />} />

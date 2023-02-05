@@ -10,7 +10,6 @@ import red from '/red.svg';
 import Context from '../../../Hook/Context';
 
 import { shuffleArray } from './../../../../func.js';
-import { Link } from 'react-router-dom';
 
 export default function Mechine() {
     const {
@@ -18,10 +17,24 @@ export default function Mechine() {
         setSelectedData,
         uncorrectAnswer,
         setUncorrectAnswer,
+        isCorrect,
+        setIsCorrect,
+        isUncorrect,
+        setIsUncorrect,
     } = useContext(Context);
     const [correctLetter, setCorrectLetter] = useState('');
     const [correctAnswer, setCorrectAnswer] = useState('');
     const [words, setWords] = useState('');
+
+    useEffect(() => {
+        setIsUncorrect(true);
+        setTimeout(() => setIsUncorrect(false), 500);
+    }, [correctAnswer]);
+    useEffect(() => {
+        setIsCorrect(true);
+        setTimeout(() => setIsCorrect(false), 500);
+    }, [uncorrectAnswer]);
+
     useEffect(() => {
         setSelectedData(shuffleArray(selectedData));
     }, []);
@@ -49,8 +62,7 @@ export default function Mechine() {
         console.log(uncorrectAnswer);
     }, [uncorrectAnswer]);
     //! левая всегда з,д,о,ъ,е,ы
-    //! правая всегда с,т,а,ь,и,и
-
+    // ! правая всегда с,т,а,ь,и,и
     const letterInner = (letter) => {
         setLetter1('');
         setLetter2('');
@@ -133,11 +145,29 @@ export default function Mechine() {
             <div className={s.mechine}>
                 <div className={s.mechine__body}>
                     <div className={s.buttons}>
-                        <button onClick={() => handleSwitch('left')}>
+                        <button
+                            className={
+                                isCorrect
+                                    ? s.isCorrect
+                                    : isUncorrect
+                                    ? s.uncorrect
+                                    : ''
+                            }
+                            onClick={() => handleSwitch('left')}
+                        >
                             <img src={arrow} alt='' />
                             <span>{letter1}</span>
                         </button>
-                        <button onClick={() => handleSwitch('right')}>
+                        <button
+                            className={
+                                isCorrect
+                                    ? s.isCorrect
+                                    : isUncorrect
+                                    ? s.uncorrect
+                                    : ''
+                            }
+                            onClick={() => handleSwitch('right')}
+                        >
                             <span>{letter2}</span>
                             <img src={arrow} alt='' />
                         </button>

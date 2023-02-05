@@ -29,8 +29,16 @@
         background: rgba($color: $secondary, $alpha: 0);
         cursor: pointer;
         transition-duration: 0.3s;
+        animation: none;
         @media (max-width: 800px) {
-            animation: hovver 1 0.5s;
+            &.isCorrect {
+                animation: hovverCorrect 1 0.5s;
+            }
+        }
+        @media (max-width: 800px) {
+            &.uncorrect {
+                animation: hovverUnCorrect 1 0.5s;
+            }
         }
         img {
             margin-top: 10px;
@@ -56,6 +64,16 @@
             left: 50px;
             @media (max-width: 800px) {
                 left: 20px;
+            }
+        }
+    }
+    & > *:first-child {
+        span {
+            @media (max-width: 470px) {
+                margin-left: 10px;
+            }
+            @media (max-width: 360px) {
+                margin-left: 20px;
             }
         }
     }
@@ -85,6 +103,16 @@
             right: 20px;
         }
     }
+    & > *:last-child {
+        span {
+            @media (max-width: 470px) {
+                margin-right: 10px;
+            }
+            @media (max-width: 360px) {
+                margin-right: 20px;
+            }
+        }
+    }
 }
 .text {
     width: 100%;
@@ -107,6 +135,7 @@
         @media (max-width: 800px) {
             margin-top: 350px;
         }
+
         padding: 15px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
         p {
@@ -136,6 +165,9 @@
         z-index: 50;
         @media (max-width: 800px) {
             margin-top: -150px;
+        }
+        @media (max-width: 350px) {
+            font-size: 25px;
         }
     }
 }
@@ -168,14 +200,33 @@
         }
     }
 }
-@keyframes hovver {
+@keyframes hovverCorrect {
     0% {
         background-color: inherit;
     }
     50% {
-        background: $secondary;
+        background: rgba($color: $secondary, $alpha: 0.7);
     }
     100% {
         background-color: inherit;
+    }
+}
+@keyframes hovverUnCorrect {
+    0% {
+        background-color: inherit;
+    }
+    50% {
+        background: rgba($color: $primary-d, $alpha: 0.7);
+    }
+    100% {
+        background-color: inherit;
+    }
+}
+@media (min-width: 800px) {
+    .isCorrect {
+        animation: hovverCorrect 1 0.5s;
+    }
+    .uncorrect {
+        animation: hovverUnCorrect 1 0.5s;
     }
 }

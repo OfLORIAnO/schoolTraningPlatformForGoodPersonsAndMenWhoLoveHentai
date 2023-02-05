@@ -13,6 +13,9 @@
         font-size: 40px;
         text-align: center;
         font-weight: 600;
+        @media (max-width: 370px){
+            font-size: 30px;
+        }
     }
     &__body {
         margin-top: 40px;
