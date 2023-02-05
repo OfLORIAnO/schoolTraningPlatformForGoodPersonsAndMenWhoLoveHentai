@@ -1,0 +1,25 @@
+@import './../../include.module.scss';
+.container {
+    height: 100%;
+}
+.dictionary {
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: $sh;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    
+    &__item {
+        margin-bottom: 20px;
+        h1{
+            font-weight: 600;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+    }
+}

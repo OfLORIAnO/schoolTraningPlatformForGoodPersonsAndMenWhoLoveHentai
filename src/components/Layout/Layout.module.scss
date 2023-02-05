@@ -25,5 +25,16 @@ footer {
         align-items: center;
         justify-content: center;
         text-align: center;
+        a {
+            font-size: 35px;
+            color: #000;
+            font-weight: 700;
+            &:hover {
+                text-decoration: underline;
+            }
+            @media (max-width: 600px) {
+                font-size: 25px;
+            }
+        }
     }
 }

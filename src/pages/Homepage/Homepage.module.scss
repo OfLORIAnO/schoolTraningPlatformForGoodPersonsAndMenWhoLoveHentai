@@ -14,20 +14,25 @@
         text-align: center;
         font-weight: 600;
     }
-    &__body{
+    &__body {
         margin-top: 40px;
-        &>*:not(:last-child){
+        & > *:not(:last-child) {
             margin-bottom: 20px;
         }
-        p{
+        p {
             font-weight: 400;
             font-size: 20px;
         }
-        a{
-            color: rgb(208, 20, 20);
-            &:hover{
-                text-decoration: underline;
-            }
-        }
+    }
+}
+.git {
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 20px;
+}
+a {
+    color: rgb(208, 20, 20);
+    &:hover {
+        text-decoration: underline;
     }
 }

@@ -12,6 +12,7 @@ import Train from './pages/Train/Train';
 import Start from './pages/Train/Start/Start';
 import Mechine from './pages/Train/Mechine/Mechine';
 import Error from './pages/Train/Error/Error';
+import Dictionary from './pages/Dictionary/Dictionary';
 
 import { PrefixesPrePri } from './../data';
 
@@ -45,6 +46,7 @@ function App() {
                             <Route path='mechine' element={<Mechine />} />
                             <Route path='error' element={<Error />} />
                         </Route>
+                        <Route path='dictionary' element={<Dictionary />} />
                     </Route>
                 </Routes>
             </div>

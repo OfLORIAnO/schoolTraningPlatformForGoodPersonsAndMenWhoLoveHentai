@@ -19,6 +19,15 @@ export default function Homepage() {
                         (Саня, не троян)
                     </p>
                 </div>
+                <div className={s.git}>
+                    Ссылка на{' '}
+                    <a
+                        target='_blunk'
+                        href='https://github.com/OfLORIAnO/schoolTraningPlatformForGoodPersonsAndMansWhoLoveHentai'
+                    >
+                        гитхаб проекта
+                    </a>
+                </div>
             </div>
         </div>
     );

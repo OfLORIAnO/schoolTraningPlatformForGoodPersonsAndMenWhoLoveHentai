@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import s from './Layout.module.scss';
 
@@ -13,7 +13,9 @@ export default function Layout() {
                 <Outlet />
             </div>
             <footer>
-                <div className={s.container}>Главная</div>
+                <div className={s.container}>
+                    <Link to='dictionary'>Словарь</Link>
+                </div>
             </footer>
         </div>
     );
