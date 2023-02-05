@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './reset.css';
 import s from './styles.module.scss';
 
-import Context from './hook/Context';
+import Context from './Hook/Context';
 
 import Layout from './components/Layout/Layout';
 import Homepage from './pages/Homepage/Homepage';
