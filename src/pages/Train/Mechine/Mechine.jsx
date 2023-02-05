@@ -9,5 +9,8 @@ import { shuffleArray } from './../../../../func.js';
 
 export default function Mechine() {
     const { selectedData, setSelectedData } = useContext(Context);
+    useEffect(() => {
+        console.log(shuffleArray(selectedData));
+    }, []);
     return <div className={s.mechine}></div>;
 }

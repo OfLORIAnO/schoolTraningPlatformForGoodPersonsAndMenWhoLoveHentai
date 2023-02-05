@@ -38,9 +38,9 @@ export default function Start() {
         allActive ? setAmountOfWords((num) => num + allData.all.length) : null;
         amountInput > 0
             ? amountInput > amountOfWords
-                ? setErrorText('Дядя Петя, ты — дурак?')
+                ? setErrorText('Введите данные корректно?')
                 : setErrorText('')
-            : setErrorText('Дядя Петя, ты — дурак?');
+            : setErrorText('Введите данные корректно');
         amountOfWords ? setSomethingActive(true) : false;
     }, [
         zsActive,
