@@ -17,6 +17,7 @@ import Dictionary from './pages/Dictionary/Dictionary';
 import { PrefixesPrePri } from './../data';
 
 import s2 from './pages/Train/Mechine/Mechine.module.scss';
+import s3 from './pages/Train/Mechine/Mechine.module.scss';
 
 function App() {
     const [allData, setAllData] = useState(PrefixesPrePri);
