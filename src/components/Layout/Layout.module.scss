@@ -1,0 +1,29 @@
+@import './../../include.module.scss';
+.layout {
+    font-size: inherit;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 60px 1fr 60px;
+}
+.page {
+    padding: 50px 0 50px 0;
+    @media (max-width: 600px) {
+        padding: 30px 0;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 100%;
+    .container {
+        height: 60px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        background: $primary;
+        box-shadow: $sh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}

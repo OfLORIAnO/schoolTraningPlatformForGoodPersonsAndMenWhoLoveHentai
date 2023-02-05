@@ -1,0 +1,21 @@
+@import '../../include.module.scss';
+.train {
+    height: 100%;
+    width: 100%;
+    .container {
+        background: $primary;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: $sh;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+        @media (max-width: 600px){
+            font-size: 35px;
+        }
+    }
+}
