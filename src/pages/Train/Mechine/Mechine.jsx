@@ -66,45 +66,42 @@ export default function Mechine() {
     const letterInner = (letter) => {
         setLetter1('');
         setLetter2('');
-        if (letter === 'и') {
-            setLetter1('е+ы');
-            setLetter2('и');
-        } else if (letter === 'е') {
-            setLetter1('е');
-            setLetter2('и');
-        } else if (letter === 'з') {
-            setLetter1('з');
-            setLetter2('с');
-        } else if (letter === 'д') {
-            setLetter1('д');
-            setLetter2('т');
-        } else if (letter === 'т') {
-            setLetter1('д');
-            setLetter2('т');
-        } else if (letter === 'о') {
-            setLetter1('о');
-            setLetter2('а');
-        } else if (letter === 'а') {
-            setLetter1('о');
-            setLetter2('а');
-        } else if (letter === 'ъ') {
-            setLetter1('ъ');
-            setLetter2('ь');
-        } else if (letter === 'ь') {
-            setLetter1('ъ');
-            setLetter2('ь');
-        } else if (letter === 'с') {
-            setLetter1('з');
-            setLetter2('с');
-        } else if (letter === 'з') {
-            setLetter1('з');
-            setLetter2('с');
-        } else if (letter === 'ы') {
-            setLetter1('ы');
-            setLetter2('и');
-        } else if (letter === 'и') {
-            setLetter1('ы');
-            setLetter2('и');
+        if (letter === 'И') {
+            setLetter1('Е');
+            setLetter2('И');
+        } else if (letter === 'Е') {
+            setLetter1('Е');
+            setLetter2('И');
+        } else if (letter === 'Д') {
+            setLetter1('Д');
+            setLetter2('Т');
+        } else if (letter === 'Т') {
+            setLetter1('Д');
+            setLetter2('Т');
+        } else if (letter === 'О') {
+            setLetter1('О');
+            setLetter2('А');
+        } else if (letter === 'А') {
+            setLetter1('О');
+            setLetter2('А');
+        } else if (letter === 'Ъ') {
+            setLetter1('Ъ');
+            setLetter2('Ь');
+        } else if (letter === 'Ь') {
+            setLetter1('Ъ');
+            setLetter2('Ь');
+        } else if (letter === 'З') {
+            setLetter1('З');
+            setLetter2('С');
+        } else if (letter === 'С') {
+            setLetter1('З');
+            setLetter2('С');
+        } else if (letter === 'Ы') {
+            setLetter1('Ы');
+            setLetter2('И');
+        } else if (letter === 'И') {
+            setLetter1('Ы');
+            setLetter2('И');
         }
     };
     useEffect(() => {
