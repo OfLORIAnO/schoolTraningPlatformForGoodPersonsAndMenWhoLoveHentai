@@ -21,6 +21,7 @@ export default function Mechine() {
         setIsCorrect,
         isUncorrect,
         setIsUncorrect,
+        allData,
     } = useContext(Context);
     const [correctLetter, setCorrectLetter] = useState('');
     const [correctAnswer, setCorrectAnswer] = useState('');
@@ -61,8 +62,7 @@ export default function Mechine() {
     useEffect(() => {
         console.log(uncorrectAnswer);
     }, [uncorrectAnswer]);
-    //! левая всегда з,д,о,ъ,е,ы
-    // ! правая всегда с,т,а,ь,и,и
+
     const letterInner = (letter) => {
         setLetter1('');
         setLetter2('');
@@ -119,9 +119,26 @@ export default function Mechine() {
             }
         }
     }, [words]);
+    const changeLetters = (left, right) => {
+        setLetter1(left);
+        setLetter2(right);
+    };
+
+    //! левая всегда з,д,о,ъ,е,ы
+    // ! правая всегда с,т,а,ь,и,и
     useEffect(() => {
         console.log(correctLetter);
-        letterInner(correctLetter);
+        allData.prepri.find((wordsPar) => wordsPar == words)
+            ? changeLetters('И', 'Е')
+            : allData.zs.find((wordsPar) => wordsPar == words)
+            ? changeLetters('З', 'С')
+            : allData.bs.find((wordsPar) => wordsPar == words)
+            ? changeLetters('И', 'Ы')
+            : allData.mm.find((wordsPar) => wordsPar == words)
+            ? changeLetters('Ь', 'Ъ')
+            : allData.all.find((wordsPar) => wordsPar == words)
+            ? letterInner(correctLetter)
+            : null;
     }, [correctLetter]);
     useEffect(() => {
         setWords(selectedData[0]);
@@ -156,7 +173,7 @@ export default function Mechine() {
                             onClick={() => handleSwitch('left')}
                         >
                             <img src={arrow} alt='' />
-                            <span>{letter1}</span>
+                            <span>{letter1 ? letter1 : null}</span>
                         </button>
                         <button
                             className={
@@ -168,7 +185,7 @@ export default function Mechine() {
                             }
                             onClick={() => handleSwitch('right')}
                         >
-                            <span>{letter2}</span>
+                            <span>{letter2 ? letter2 : null}</span>
                             <img src={arrow} alt='' />
                         </button>
                     </div>
