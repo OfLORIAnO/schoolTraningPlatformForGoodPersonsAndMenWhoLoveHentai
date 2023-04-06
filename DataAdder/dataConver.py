@@ -19,7 +19,6 @@ def convertArray(arrayOfWords):
     arrayOfWords = list(set(arrayOfWords))
 
     allWordsConverted = []
-
     prePriArray = []
     ZSArray = []
     bsArray = []
