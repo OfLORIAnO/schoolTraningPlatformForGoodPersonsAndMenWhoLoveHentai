@@ -17,7 +17,6 @@ import Dictionary from './pages/Dictionary/Dictionary';
 import { PrefixesPrePri } from './../data';
 
 import s2 from './pages/Train/Mechine/Mechine.module.scss';
-import s3 from './pages/Train/Mechine/Mechine.module.scss';
 
 function App() {
     const [allData, setAllData] = useState(PrefixesPrePri);
@@ -25,10 +24,24 @@ function App() {
     const [uncorrectAnswer, setUncorrectAnswer] = useState([]);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isUncorrect, setIsUncorrect] = useState(false);
+
+    function removeDuplicates(obj) {
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                obj[key] = obj[key].filter((arr, index, self) => {
+                    return self.findIndex((t) => t[0] === arr[0]) === index;
+                });
+            }
+        }
+        return obj;
+    }
+    
     useEffect(() => {
         setSelectedData([]);
         setUncorrectAnswer([]);
+        setAllData(removeDuplicates(allData));
     }, []);
+
     return (
         <Context.Provider
             value={{
@@ -51,17 +64,17 @@ function App() {
                 }
             >
                 <Routes>
-                    <Route path='/' element={<Layout />}>
+                    <Route path={'/'} element={<Layout />}>
                         <Route index element={<Homepage />} />
-                        <Route path='train/*' element={<Train />}>
+                        <Route path={'train/*'} element={<Train />}>
                             <Route
                                 index
                                 element={<Start allData={allData} />}
                             />
-                            <Route path='mechine' element={<Mechine />} />
-                            <Route path='error' element={<Error />} />
+                            <Route path={'mechine'} element={<Mechine />} />
+                            <Route path={'error'} element={<Error />} />
                         </Route>
-                        <Route path='dictionary' element={<Dictionary />} />
+                        <Route path={'dictionary'} element={<Dictionary />} />
                     </Route>
                 </Routes>
             </div>

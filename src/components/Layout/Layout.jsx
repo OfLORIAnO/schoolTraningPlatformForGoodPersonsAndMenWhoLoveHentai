@@ -14,7 +14,7 @@ export default function Layout() {
             </div>
             <footer>
                 <div className={s.container}>
-                    <Link to='dictionary'>Словарь</Link>
+                    <Link to={'dictionary'}>Словарь</Link>
                 </div>
             </footer>
         </div>

@@ -22,13 +22,7 @@ export default function Start() {
     }, []);
     const [errorText, setErrorText] = useState(' ');
     const [amountInput, setAmountInput] = useState(0);
-    const [amountOfWords, setAmountOfWords] = useState(
-        allData.prepri.length +
-            allData.zs.length +
-            allData.bs.length +
-            allData.mm.length +
-            allData.all.length
-    );
+    const [amountOfWords, setAmountOfWords] = useState();
     const [zsActive, setzsActive] = useState(false);
     const [preActive, setpreActive] = useState(false);
     const [bsActive, setbsActive] = useState(false);
@@ -59,7 +53,17 @@ export default function Start() {
         amountInput,
         amountOfWords,
     ]);
-
+    useEffect(() => {
+        allData.prepri
+            ? setAmountOfWords(
+                  allData.prepri.length +
+                      allData.zs.length +
+                      allData.bs.length +
+                      allData.mm.length +
+                      allData.all.length
+              )
+            : null;
+    }, []);
     useEffect(() => {
         setSelectedData([]);
         preActive
