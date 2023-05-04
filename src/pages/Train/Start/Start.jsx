@@ -16,13 +16,16 @@ export default function Start() {
         setSelectedData,
         uncorrectAnswer,
         setUncorrectAnswer,
+        amountOfWords,
+        setAmountOfWords,
+        amountInput,
+        setAmountInput,
+
     } = useContext(Context);
     useEffect(() => {
         setUncorrectAnswer([]);
     }, []);
     const [errorText, setErrorText] = useState(' ');
-    const [amountInput, setAmountInput] = useState(0);
-    const [amountOfWords, setAmountOfWords] = useState();
     const [zsActive, setzsActive] = useState(false);
     const [preActive, setpreActive] = useState(false);
     const [bsActive, setbsActive] = useState(false);

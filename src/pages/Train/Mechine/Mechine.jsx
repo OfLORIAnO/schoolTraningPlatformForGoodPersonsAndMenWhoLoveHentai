@@ -22,6 +22,10 @@ export default function Mechine() {
         isUncorrect,
         setIsUncorrect,
         allData,
+        amountOfWords,
+        setAmountOfWords,
+        amountInput,
+        setAmountInput,
     } = useContext(Context);
     const [correctLetter, setCorrectLetter] = useState('');
     const [correctAnswer, setCorrectAnswer] = useState('');
@@ -37,7 +41,8 @@ export default function Mechine() {
     }, [uncorrectAnswer]);
 
     useEffect(() => {
-        setSelectedData(shuffleArray(selectedData));
+        console.log(amountOfWords);
+        setSelectedData(shuffleArray(selectedData, amountInput));
     }, []);
     const [letter1, setLetter1] = useState('');
     const [letter2, setLetter2] = useState('');

@@ -1,1 +1,0 @@
-write the python code that will be generated in a new text file in this format:

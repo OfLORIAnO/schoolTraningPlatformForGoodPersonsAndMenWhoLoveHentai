@@ -24,6 +24,8 @@ function App() {
     const [uncorrectAnswer, setUncorrectAnswer] = useState([]);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isUncorrect, setIsUncorrect] = useState(false);
+    const [amountOfWords, setAmountOfWords] = useState();
+    const [amountInput, setAmountInput] = useState(0);
 
     function removeDuplicates(obj) {
         for (const key in obj) {
@@ -35,7 +37,7 @@ function App() {
         }
         return obj;
     }
-    
+
     useEffect(() => {
         setSelectedData([]);
         setUncorrectAnswer([]);
@@ -54,6 +56,10 @@ function App() {
                 setIsCorrect,
                 isUncorrect,
                 setIsUncorrect,
+                amountOfWords,
+                setAmountOfWords,
+                amountInput,
+                setAmountInput,
             }}
         >
             <div

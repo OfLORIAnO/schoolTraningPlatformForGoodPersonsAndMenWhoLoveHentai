@@ -1,4 +1,4 @@
-export function shuffleArray(array) {
+export function shuffleArray(array, num) {
     let currentIndex = array.flat().length,
         temporaryValue,
         randomIndex;
@@ -20,5 +20,22 @@ export function shuffleArray(array) {
         array[currentIndex2] = array[randomIndex2];
         array[randomIndex2] = temporaryValue2;
     }
+    console.log(array);
+    function getRandomArrayElements(arr, num) {
+        var result = new Array(num),
+            len = arr.length,
+            taken = new Array(len);
+        if (num > len)
+            throw new RangeError(
+                'getRandomArrayElements: запрошенное количество элементов превышает длину массива'
+            );
+        while (num--) {
+            var x = Math.floor(Math.random() * len);
+            result[num] = arr[x in taken ? taken[x] : x];
+            taken[x] = --len in taken ? taken[len] : len;
+        }
+        return result;
+    }
+    array = getRandomArrayElements(array, num);
     return array;
 }
